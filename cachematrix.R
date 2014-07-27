@@ -1,10 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Caching the inverse of a matrix
 
-## Write a short comment describing this function
-
-makeCacheMatrix <- function(x = matrix()) {
 ##Creates a special matrix and cache his inverse matrix
+makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
     ##Set the value of the vector
@@ -12,7 +9,6 @@ makeCacheMatrix <- function(x = matrix()) {
     m <<- NULL
   }
   get <- function() x
-  
   ##Get the value of the vector 
   setsolve <- function(solve) m <<- solve ##set inverse matrix value on cache
   getsolve <- function() m
@@ -23,10 +19,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-cacheSolve <- function(x, ...) {        
-  ##Checks if the inverse matrix value is cached and if it is not, 
-  ##this function calculates it
-  
+##Checks if the inverse matrix value is cached and if it is not, this function calculates it
+cacheSolve <- function(x, ...) {      
   m <- x$getsolve()
   if(!is.null(m)) {
     message("Getting Cached Data")
